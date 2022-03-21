@@ -1,4 +1,9 @@
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ResultTest {
@@ -51,6 +56,14 @@ class ResultTest {
         boolean actual = result.gradeToBeRounded(80);
         boolean expected = false;
         assertEquals(actual, expected);
+    }
+
+    @Test
+    void gradingStudentsTest(){
+        List<Integer> expected = Arrays.asList(75, 67, 40, 33);
+        List<Integer> grades = Arrays.asList(4, 73, 67, 38, 33);
+        List<Integer> actual = Result2.gradingStudents(grades);
+        assertEquals(expected, actual);
     }
 
 }

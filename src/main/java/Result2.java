@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 
 public class Result2 {
         static int students;
@@ -35,10 +34,6 @@ public class Result2 {
                         }
                     }
                 }
-            }
-
-            for(int x = 0; x < results.size()/2; x++){
-                System.out.println(results.get(x));
             }
             return results;
         }
