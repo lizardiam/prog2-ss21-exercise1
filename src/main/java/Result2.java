@@ -3,7 +3,6 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class Result2 {
-        static int grade;
         static int students;
         static Result2 result = new Result2();
 
@@ -20,31 +19,27 @@ public class Result2 {
         public static List<Integer> gradingStudents(List<Integer> grades){
             students = grades.size();
             List<Integer> results = new ArrayList<Integer>(students);
-            results.add(students);
 
             if (result.studentCountValid(students)){
                 for (int i = 1; i < grades.size(); i++){
-                    if (result.gradeValid(grade)){
-
-                        for (int j =0; j < grades.size(); j++){
-
-                            if (result.gradeToBeRounded(grade)){
+                    if (result.gradeValid(grades.get(i))){
+                        for (int j =1; j < grades.size(); j++){
+                            if (result.gradeToBeRounded(grades.get(j))){
+                                int grade = grades.get(j);
                                 grade = grade+(5-(grade%5));
                                 results.add(grade);
                             }
                             else{
-                                results.add(grade);
+                                results.add(grades.get(j));
                             }
                         }
                     }
                 }
             }
 
-            ListIterator<Integer> results1 = results.listIterator();
-            while(results1.hasNext()){
-                System.out.println(results1.next());
+            for(int x = 0; x < results.size()/2; x++){
+                System.out.println(results.get(x));
             }
-
             return results;
         }
 
