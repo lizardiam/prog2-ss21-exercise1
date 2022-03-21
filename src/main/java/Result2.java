@@ -25,16 +25,15 @@ public class Result2 {
 
                     if (Result2.gradeValid(grades.get(i))){
 
-                        for (int j = 1; j < grades.size(); j++){
 
-                            if (Result2.gradeToBeRounded(grades.get(j))){
-                                int grade = grades.get(j);
-                                grade = grade+(5-(grade%5));
-                                results.add(grade);
-                            }
-                            else{
-                                results.add(grades.get(j));
-                            }
+
+                        if (Result2.gradeToBeRounded(grades.get(i))){
+                            int grade = grades.get(i);
+                            grade = grade+(5-(grade%5));
+                            results.add(grade);
+                        }
+                        else{
+                            results.add(grades.get(i));
                         }
                     }
                 }
