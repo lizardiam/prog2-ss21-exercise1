@@ -62,4 +62,12 @@ class ResultTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void gradingStudentsTest1(){
+        List<Integer> expected = Arrays.asList(65, 67, 40, 45, 90);
+        List<Integer> grades = Arrays.asList(6, 64, 67, 38, 44, 88);
+        List<Integer> actual = Result2.gradingStudents(grades);
+        assertEquals(expected, actual);
+    }
+
 }
