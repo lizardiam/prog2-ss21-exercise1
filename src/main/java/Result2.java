@@ -3,7 +3,6 @@ import java.util.List;
 
 public class Result2 {
         static int students;
-        static Result2 result = new Result2();
 
         protected static boolean studentCountValid(int students){
             return(0 < students && students <= 60);
@@ -24,8 +23,6 @@ public class Result2 {
                 for (int i = 1; i < grades.size(); i++){
 
                     if (Result2.gradeValid(grades.get(i))){
-
-
 
                         if (Result2.gradeToBeRounded(grades.get(i))){
                             int grade = grades.get(i);
