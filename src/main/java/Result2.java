@@ -16,14 +16,18 @@ public class Result2 {
         }
 
         public static List<Integer> gradingStudents(List<Integer> grades){
-            students = grades.size();
+            students = (grades.size())-1;
             List<Integer> results = new ArrayList<Integer>(students);
 
-            if (result.studentCountValid(students)){
+            if (Result2.studentCountValid(students)){
+
                 for (int i = 1; i < grades.size(); i++){
-                    if (result.gradeValid(grades.get(i))){
-                        for (int j =1; j < grades.size(); j++){
-                            if (result.gradeToBeRounded(grades.get(j))){
+
+                    if (Result2.gradeValid(grades.get(i))){
+
+                        for (int j = 1; j < grades.size(); j++){
+
+                            if (Result2.gradeToBeRounded(grades.get(j))){
                                 int grade = grades.get(j);
                                 grade = grade+(5-(grade%5));
                                 results.add(grade);
@@ -36,14 +40,5 @@ public class Result2 {
                 }
             }
             return results;
-        }
-
-        public static void main(String[] args){
-            List<Integer> grades = new ArrayList<Integer>();
-            grades.add(75);
-            grades.add(67);
-            grades.add(38);
-            grades.add(33);
-            result.gradingStudents(grades);
         }
     }
